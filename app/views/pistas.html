@@ -6,10 +6,10 @@
 
  <ons-list>
 
-        <ons-list-item modifier="chevron" class="list-item-container" onclick="myNavigator.pushPage('views/horarios.html')" ng-repeat="pista in pistas">
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="myNavigator.pushPage('views/horarios.html', { param1: 'Frontón', param2: 'value2' })" ng-repeat="pista in pistas">
           <ons-row>
             <ons-col width="95px">
-              <img src="img/location1.png" class="thumbnail">
+              <!-- <img src="img/location1.png" class="thumbnail"> -->
             </ons-col>
             <ons-col>
               <div class="name">

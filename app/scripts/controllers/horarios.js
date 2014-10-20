@@ -9,9 +9,10 @@
  */
 angular.module('mcalendarioAppApp')
   .controller('HorariosCtrl', function ($scope, cal) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
+
+	var page = myNavigator.getCurrentPage();
+	$scope.titulo = page.options.param1;
+
+
   });
