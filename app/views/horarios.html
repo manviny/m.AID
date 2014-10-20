@@ -1,31 +1,37 @@
-<ons-page ng-controller="PistasCtrl">
+<ons-page ng-controller="HorariosCtrl">
     <ons-toolbar>
       <div class="left"><ons-back-button>Back</ons-back-button></div>
-      <div class="center">Horarios</div>
+      <div class="center">Horario {{titulo}}</div>
     </ons-toolbar>
 
- <ons-list>
+       <ons-list class="plan-list">
+          <ons-list-item  class="plan" ng-repeat="a in [1,2,3,4,5,6,7,8,9,10]">
+            <ons-row>
+              <ons-col width="80px" class="plan-left">
+                <div class="plan-date">5:30 PM</div>
+                <div class="plan-duration">1h</div>
+              </ons-col>
 
-        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="pista in pistas">
-          <ons-row>
-            <ons-col width="95px">
-              <img src="img/location1.png" class="thumbnail">
-            </ons-col>
-            <ons-col>
-              <div class="name">
-                {{pista.title}}
-              </div>
-              <div class="location">
-                <i class="fa fa-map-marker"></i> Paris, France
-              </div>
-              <div class="desc">
-               <span class="notification">10</span>
-              </div>
-            </ons-col>
-            <ons-col width="40px"></ons-col>
-          </ons-row>
-        </ons-list-item>
-    </ons-list>
+              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 3 == 1 ? '#3399ff' : '#ccc'}">
+              </ons-col>
+
+              <ons-col class="plan-right">
+                <div class="plan-name">Onsen UI Meetup</div>
+
+                <div class="plan-info">
+                  <div ng-hide="a % 4 == 0">
+                    <ons-icon icon="fa-phone"></ons-icon>123-456-789
+                  </div>
+
+                  <div ng-hide="a % 3 == 0">
+                    <ons-icon icon="fa-map-marker"></ons-icon>Moscone, San Francisco
+                  </div>
+                </div>
+              </ons-col>
+            </ons-row>
+          </ons-list-item>
+
+        </ons-list>
     
 </ons-page>
 
