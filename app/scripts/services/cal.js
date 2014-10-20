@@ -31,7 +31,14 @@ angular.module('mcalendarioAppApp')
       */
      var getSemana = function (){ 
 
-        var hoy = moment(new Date()).format("DD-MM-YYYY");      // fecha de hoy
+        var semana = [];
+        var b; 
+
+        for (var i = 0; i < 8; i++) { 
+            b = moment(new Date()).add(i, 'day');
+            semana.push({"date":b.format("DD-MM-YYYY"), "day":b.format("dddd")});
+          }        
+        return semana;
         
         var deferred = $q.defer();
         dpd.calendarios.get( {fecha: hoy}, function(result) { 
