@@ -1,0 +1,28 @@
+<ons-page ng-controller="PistasCtrl">
+
+
+ <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" ng-repeat="pista in pistas">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="img/location1.png" class="thumbnail">
+            </ons-col>
+            <ons-col>
+              <div class="name">
+                {{pista.title}}
+              </div>
+              <div class="location">
+                <i class="fa fa-map-marker"></i> Paris, France
+              </div>
+              <div class="desc">
+               <span class="notification">10</span>
+              </div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+    </ons-list>
+    
+</ons-page>
+
