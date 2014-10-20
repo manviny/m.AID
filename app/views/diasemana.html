@@ -1,1 +1,22 @@
-<p>This is the diasemana view.</p>
+<ons-page ng-controller="DiasemanaCtrl">
+
+    <ons-toolbar>
+        <div class="center">Dia semana</div>
+    </ons-toolbar>
+ <ons-list>
+
+        <ons-list-item modifier="chevron" class="list-item-container" onclick="myNavigator.pushPage('views/pistas.html')" ng-repeat="dia in dias">
+          <ons-row>
+            <ons-col width="95px">
+              <img src="img/location1.png" class="thumbnail">
+            </ons-col>
+            <ons-col><div class="name">{{dia.day}} </div>
+            <ons-col><div class="name"> {{dia.date}}</div>
+            </ons-col>
+            <ons-col width="40px"></ons-col>
+          </ons-row>
+        </ons-list-item>
+    </ons-list>
+    
+</ons-page>
+

@@ -8,10 +8,9 @@
  * Controller of the mcalendarioAppApp
  */
 angular.module('mcalendarioAppApp')
-  .controller('DiasemanaCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('DiasemanaCtrl', function ($scope, cal) {
+ 
+  	
+  	$scope.dias = cal.getSemana();
+console.debug("pistas", $scope.dias);
   });

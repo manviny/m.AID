@@ -16,6 +16,5 @@ angular.module('mcalendarioAppApp')
   	    console.log(response);
   	})
 
-  	console.debug("pistas", cal.getSemana())
 
   });
