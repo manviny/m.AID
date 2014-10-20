@@ -40,6 +40,10 @@ angular
         templateUrl: 'views/diasemana.html',
         controller: 'DiasemanaCtrl'
       })
+      .when('/horarios', {
+        templateUrl: 'views/horarios.html',
+        controller: 'HorariosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
