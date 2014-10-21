@@ -16,10 +16,10 @@ angular.module('mcalendarioAppApp')
      */
      var getCalendario = function (masDias){ 
 
-        var hoy = moment(new Date()).format("DD-MM-YYYY");      // fecha de hoy
-        
+        var diaSemana = moment(new Date()).add(masDias, 'days').format("DD-MM-YYYY");
+
         var deferred = $q.defer();
-        dpd.calendarios.get( {fecha: hoy}, function(result) { 
+        dpd.calendarios.get( {fecha: diaSemana}, function(result) { 
           deferred.resolve(result[0].reserva.pistas);
         });
         return deferred.promise;

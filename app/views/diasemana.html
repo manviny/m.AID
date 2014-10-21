@@ -1,13 +1,19 @@
 <ons-page ng-controller="DiasemanaCtrl">
 
     <ons-toolbar>
-        <div class="center">Dia semana</div>
+        <div class="center">Polideportivo</div>
+        <div class="right">
+          <ons-toolbar-button>
+            <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
+          </ons-toolbar-button>
+        </div>
     </ons-toolbar>
  <ons-list>
 
-        <ons-list-item modifier="chevron" class="list-item-container" onclick="myNavigator.pushPage('views/pistas.html')" ng-repeat="dia in dias">
+        <ons-list-item modifier="chevron" class="list-item-container" ng-click="goPista($index)" ng-repeat="dia in dias">
           <ons-row>
             <ons-col width="95px">
+                <ons-button modifier="large--light">L</ons-button>
               <!-- <img src="img/location1.png" class="thumbnail"> -->
             </ons-col>
             <ons-col><div class="name">{{dia.day}} </div>
