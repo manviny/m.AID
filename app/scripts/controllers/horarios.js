@@ -17,9 +17,6 @@ angular.module('mcalendarioAppApp')
 	$scope.titulo = page.options.pista;
 	$scope.horarios = _.find(cal.getCalendarioFechaSeleccionada(), { 'title': $scope.titulo }).horario;
 
-
-	console.log(cal.getCalendarioFechaSeleccionada());
-	console.log($scope.titulo);
 	console.log($scope.horarios);
 
 
