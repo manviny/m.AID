@@ -1,3 +1,4 @@
+
 <ons-page ng-controller="DiasemanaCtrl">
 
     <ons-toolbar>
@@ -13,8 +14,7 @@
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="goPista($index)" ng-repeat="dia in dias">
           <ons-row>
             <ons-col width="95px">
-                <ons-button modifier="large--light">L</ons-button>
-              <!-- <img src="img/location1.png" class="thumbnail"> -->
+              <div style="font-weight:24px; background-color:darkcyan; width:60px; color:white">{{dia.day.charAt(0)}}</div>
             </ons-col>
             <ons-col><div class="name">{{dia.day}} </div>
             <ons-col><div class="name"> {{dia.date}}</div>
