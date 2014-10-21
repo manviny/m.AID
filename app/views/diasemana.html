@@ -13,8 +13,10 @@
 
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="goPista($index)" ng-repeat="dia in dias">
           <ons-row>
-            <ons-col width="95px">
-              <div style="font-weight:24px; background-color:darkcyan; width:60px; color:white">{{dia.day.charAt(0)}}</div>
+            <ons-col width="95px" class='square-box' style='background: orange;'>
+                <div class='square-content' >
+                  <div><span>{{dia.day.charAt(0)}}</span></div>
+                </div>
             </ons-col>
             <ons-col><div class="name">{{dia.day}} </div>
             <ons-col><div class="name"> {{dia.date}}</div>

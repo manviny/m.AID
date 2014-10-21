@@ -1,44 +1,25 @@
-<style>
 
-
-.dwqa-single-question .dwqa-comment-author .avatar {
-position: absolute;
-top: 15px;
-left: 20px;
-}
-
-.dw-avatar {
-color: #fff;
-text-align: center;
-font-size: 16px;
-display: inline-block;
-padding: 0!important;
-border: none!important;
-width: 32px;
-height: 32px;
-line-height: 32px;
-}
-
-</style>
 <ons-page ng-controller="PistasCtrl">
     <ons-toolbar>
       <div class="left"><ons-back-button>Back</ons-back-button></div>
       <div class="center">Pistas</div>
     </ons-toolbar>
-<span style="background-color: #ff9500 " class="dw-avatar avatar " title="Avatar of Adnan Rashid">A</span>
+
  <ons-list>
 
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="goHorario($index)" ng-repeat="pista in pistas">
-          <ons-row>
-            <ons-col width="95px">
-              <!-- <img src="img/location1.png" class="thumbnail"> -->
+          <ons-row align="">
+            <ons-col width="95px" class='square-box' style='background: teal;'>
+                <div class='square-content'>
+                  <div><span>{{pista.libres}}</span></div>
+                </div>
             </ons-col>
             <ons-col>
               <div class="name">
                 {{pista.title}}
               </div>
               <div class="desc">
-               <span class="notification" style="background-color:darkgreen">{{pista.libres}}</span>
+               19-07-2014
               </div>
             </ons-col>
             <ons-col width="40px"></ons-col>
