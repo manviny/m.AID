@@ -12,16 +12,15 @@ angular.module('mcalendarioAppApp')
 
   	cal.getCalendario(myNavigator.getCurrentPage().options.masDias)
   	.then(function(response){
+  		
   		$scope.pistas = [];
 
 		angular.forEach(response, function(pista) {
-		  console.debug('pista',pista.title);
+
 		  		var libre = 0;
-		  		angular.forEach(pista.horario, function(horario) {
-		  			if(_.isEmpty(horario.h)) {libre++}
-				});
-				console.debug("libre",libre);
-				$scope.pistas.push({title: pista.title, libres: libre})
+		  		angular.forEach(pista.horario, function(horario) { if(_.isEmpty(horario.h)) {libre++} });	// suma pistas libres
+
+				$scope.pistas.push({title: pista.title, libres: libre})										// crea Objeto pistas
 		});
 
   	})
