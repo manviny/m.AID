@@ -10,9 +10,17 @@
 angular.module('mcalendarioAppApp')
   .controller('HorariosCtrl', function ($scope, cal) {
 
+  	
+  	
 
 	var page = myNavigator.getCurrentPage();
-	$scope.titulo = page.options.param1;
+	$scope.titulo = page.options.pista;
+	$scope.horarios = _.find(cal.getCalendarioFechaSeleccionada(), { 'title': $scope.titulo }).horario;
+
+
+	console.log(cal.getCalendarioFechaSeleccionada());
+	console.log($scope.titulo);
+	console.log($scope.horarios);
 
 
   });

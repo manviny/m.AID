@@ -15,6 +15,5 @@ angular.module('mcalendarioAppApp')
   	$scope.goPista = function(index){
   		myNavigator.pushPage('views/pistas.html',{masDias:index})
   	}  	
-
-console.debug("pistas", $scope.dias);
+  	
   });

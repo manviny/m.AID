@@ -13,8 +13,10 @@ angular.module('mcalendarioAppApp')
   	cal.getCalendario(myNavigator.getCurrentPage().options.masDias)
   	.then(function(response){
   		$scope.pistas = response;
-  	    console.log(response);
   	})
 
+  	$scope.goHorario = function(index){
+  		myNavigator.pushPage('views/horarios.html', { pista: $scope.pistas[index].title })
+  	}  
 
   });

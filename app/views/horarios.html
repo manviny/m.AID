@@ -5,18 +5,19 @@
     </ons-toolbar>
 
        <ons-list class="plan-list">
-          <ons-list-item  class="plan" ng-repeat="a in [1,2,3,4,5,6,7,8,9,10]">
+
+          <ons-list-item  class="plan" ng-repeat="hora in horarios">
             <ons-row>
               <ons-col width="80px" class="plan-left">
-                <div class="plan-date">5:30 PM</div>
+                <div class="plan-date">{{hora.t}}</div>
                 <div class="plan-duration">1h</div>
               </ons-col>
 
-              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:a % 3 == 1 ? '#3399ff' : '#ccc'}">
+              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:$index % 3 == 1 ? '#3399ff' : '#ccc'}">
               </ons-col>
 
               <ons-col class="plan-right">
-                <div class="plan-name">Frontón (1)</div>
+                <div class="plan-name">{{titulo}} </div>
 
                 <div class="plan-info">
                   <div ng-hide="a % 4 == 0">
