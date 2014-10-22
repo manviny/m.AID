@@ -8,26 +8,43 @@
 
           <ons-list-item  class="plan" ng-repeat="hora in horarios">
             <ons-row>
-              <ons-col width="80px" class="plan-left">
-                <div class="plan-date">{{hora.t}}</div>
+<!--               <ons-col width="80px" class="plan-left">
+                <div class="plan-date">{{hora.hora}}</div>
                 <div class="plan-duration">1h</div>
               </ons-col>
-
-              <ons-col width="6px" class="plan-center" ng-style="{backgroundColor:$index % 3 == 1 ? '#3399ff' : '#ccc'}">
-              </ons-col>
+               -->
+            <!-- libre    -->
+            <ons-col width="80px" class='square-box' ng-show="hora.libre" style='background: forestgreen; font-size:0.7em'>
+                <div class='square-content' >
+                  <div><span>{{hora.hora}}</span></div>
+                </div>
+            </ons-col>
+            <!-- ocupado               -->
+            <ons-col width="80px" class='square-box' ng-show="!hora.libre" style='background: #ddd; font-size:0.7em'>
+                <div class='square-content' >
+                  <div><span>{{hora.hora}}</span></div>
+                </div>
+            </ons-col>  
+<!-- 
+              <ons-col width="6px" class="plan-center" ng-style="{ '{{hora.libre}}' ? '#3399ff' : '#ccc'}">
+              </ons-col> -->
+              <ons-col width="6px" class="plan-center" ng-show="hora.libre"></ons-col>
+              <ons-col width="6px" class="plan-center" style="background-color: #DDD;" ng-show="!hora.libre"></ons-col>
 
               <ons-col class="plan-right">
-                <div class="plan-name">{{titulo}} </div>
+
+                <div class="plan-name" ng-show="hora.libre">{{titulo}} </div>
+                <div class="plan-name" ng-show="!hora.libre" style='color: #999;'>{{titulo}} </div>
 
                 <div class="plan-info">
-
-
                   <div ng-hide="a % 3 == 0">
-                    <ons-icon icon="fa-map-marker"></ons-icon>Ocupado
+                    <ons-icon icon="fa-map-marker"></ons-icon>miércoles 14-10
                   </div>
                 </div>
+
               </ons-col>
             </ons-row>
+
           </ons-list-item>
 
         </ons-list>

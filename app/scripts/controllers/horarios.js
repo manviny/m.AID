@@ -11,13 +11,15 @@ angular.module('mcalendarioAppApp')
   .controller('HorariosCtrl', function ($scope, cal) {
 
   	
-  	
+  	$scope.horarios = [];
 
 	var page = myNavigator.getCurrentPage();
 	$scope.titulo = page.options.pista;
-	$scope.horarios = _.find(cal.getCalendarioFechaSeleccionada(), { 'title': $scope.titulo }).horario;
+	$scope.planHorario = _.find(cal.getCalendarioFechaSeleccionada(), { 'title': $scope.titulo }).horario;
 
-	console.log($scope.horarios);
 
+	angular.forEach($scope.planHorario, function(hora) {
+		hora.h.length == 0 ? $scope.horarios.push({hora: hora.t, libre: true}) : $scope.horarios.push({hora: hora.t, libre: false});	
+	});
 
   });
