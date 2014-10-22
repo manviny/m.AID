@@ -2,26 +2,30 @@
 <ons-page ng-controller="DiasemanaCtrl">
 
     <ons-toolbar>
-        <div class="center">Polideportivo</div>
-        <div class="right">
+        <div class="center">Deportes Burjassot</div>
+<!--         <div class="right">
           <ons-toolbar-button>
             <ons-icon icon="ion-navicon" style="font-size: 32px; width: 1em">
           </ons-toolbar-button>
-        </div>
+        </div> -->
     </ons-toolbar>
  <ons-list>
 
         <ons-list-item modifier="chevron" class="list-item-container" ng-click="goPista($index)" ng-repeat="dia in dias">
           <ons-row>
-            <ons-col width="95px" class='square-box' style='background: orange;'>
+
+            <ons-col width="80px" class='square-box' style='background: orange;'>
                 <div class='square-content' >
-                  <div><span>{{dia.day.charAt(0)}}</span></div>
+                  <div><span>{{dia.day.substring(0, 2)}}</span></div>
                 </div>
             </ons-col>
-            <ons-col><div class="name">{{dia.day}} </div>
-            <ons-col><div class="name"> {{dia.date}}</div>
+
+            <ons-col>
+              <div class="name">{{dia.day}} </div>
+              <div class="location"><i class="fa fa-calendar-o"></i> {{dia.date}}</div>
             </ons-col>
             <ons-col width="40px"></ons-col>
+
           </ons-row>
         </ons-list-item>
     </ons-list>

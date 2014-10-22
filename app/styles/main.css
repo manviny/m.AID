@@ -138,6 +138,7 @@ body {
     /*background: #4679BD;*/
     background: teal;
     margin:5px;
+    margin-right: 15px;
 }
 .square-box:before{
     content: "";
@@ -164,4 +165,9 @@ body {
     text-align: center;
     vertical-align: middle;
     color: white;
+}
+.location {
+  font-size: 14px;
+  opacity: 0.4;
+  margin-bottom: 6px;
 }
